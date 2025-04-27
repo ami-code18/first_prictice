@@ -5,84 +5,132 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>コーヒー販売</title>
   <style>
-  
-  html{
-  	height:100%;
-  	margin:0;
-  	display:flex;
-  	justify-content:center;
-  	align-items:center;
-  }
-	  
-	ul {
-	  list-style-type: none;  /* 丸い点を消す */
-	  padding: 0;  /* リストの左側の余白を消す */
-	}
-	
-	h3{
-		 border-bottom: 2px solid #000;
-	}
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      min-height: 100%;
+    }
 
-  .conteiner{
-  	text-align:center;
-  	margin:40px;
-  }
-  
-  .session{
-  	display:flex;
-  }
-  
-   .session > div {
-    display: flex; /* 子要素内でもflexを適用 */
-    flex-direction: column; /* 見出しとリストを縦並びに */
-    margin-right: 120px; 
-   }
-  
-  button{
-  	display:inline-block;
-  	border:2px solid #000;
-  	padding:20px;
-  }
-   
+    html {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start; /* 上に寄せて中央に配置 */
+      height: 100%;
+    }
+
+    body {
+      width: 100%;
+      max-width: 600px; /* 最大幅を600pxに指定 */
+      margin: 0;
+      padding: 0 15px; /* サイドに少し余白 */
+    }
+
+    h1 {
+      font-size: 1.5rem; /* フォントサイズを調整 */
+      margin-bottom: 20px; /* 下部に余白を追加 */
+      text-align: center;
+    }
+
+    ul {
+      list-style-type: none; /* 丸い点を消す */
+      padding: 0; /* リストの左側の余白を消す */
+    }
+
+    h3 {
+      border-bottom: 2px solid #000;
+    }
+
+    .container {
+      text-align: center;
+      margin: 40px;
+    }
+
+    .session {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .session > div {
+      display: flex; /* 子要素内でもflexを適用 */
+      flex-direction: column; /* 見出しとリストを縦並びに */
+      margin-right: 120px;
+    }
+
+    button {
+      display: inline-block;
+      border: 2px solid #000;
+      padding: 20px;
+      width: 100%; /* ボタンを画面全体に広げる */
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    /* レスポンシブ対応 */
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.2rem; /* タイトルのフォントサイズを少し小さく */
+        margin-bottom: 10px; /* 下部余白を調整 */
+      }
+
+      .session {
+        flex-direction: column; /* 横並びから縦並びに変更 */
+        align-items: center;
+      }
+
+      .session > div {
+        text-align: left; /* テキストを左寄せ */
+        margin-bottom: 10px; /* 各項目間にスペース */
+        width: 100%; /* 幅を100%に */
+      }
+
+      button {
+        padding: 15px;
+        font-size: 1.1rem; /* ボタンのフォントサイズを調整 */
+      }
+
+      p {
+        margin: 10px 0;
+        font-size: 0.9rem; /* パラグラフのフォントサイズを少し小さく */
+      }
+    }
   </style>
 </head>
 <body>
-	<h1>右の機械にコインを投入して下さい</h1>
+  <h1>右の機械にコインを投入して下さい</h1>
 
+  <div class="session">
+    <div>
+      <h3>ご利用できる硬貨</h3>
+      <ul>
+        <li>500円、100円</li>
+        <li>50円、10円</li>
+      </ul>
+    </div>
 
-	<div class="session">
-	<div>
-	<h3>ご利用できる硬貨</h3>
-		<ul>
-			<li>500円、100円</li>
-			<li>50円、10円</li>
-		</ul>
-	</div>
-	
-	<div>
-	<h3>ご利用出来ないもの</h3>
-		<ul>
-			  <li>1円､５円</li>
-			  <li>紙幣（1000円、5000円、10000円）</li>
-			  <li>クレジット払い、バーコード決済</li>
-		</ul>
-	</div>	
-	</div>
+    <div>
+      <h3>ご利用出来ないもの</h3>
+      <ul>
+        <li>1円､５円</li>
+        <li>紙幣（1000円、5000円、10000円）</li>
+        <li>クレジット払い、バーコード決済</li>
+      </ul>
+    </div>
+  </div>
 
-	<div class="conteiner" id="click">
-		<button>投入完了</button>
-	</div>
-	
-	<p>紙幣をご利用になる際は、お手数ですがサービスカウンターで両替をお願いいたします。</p>
-	<p>サービスカウンターの場所</p>
+  <div class="container" id="click">
+    <button>投入完了</button>
+  </div>
 
-<script>
-	const button = document.getElementById('click');
-	
-	button.addEventListener('click', ()=>{
-		window.location.href = "select.html";
-	});
-</script>
+  <p>紙幣をご利用になる際は、お手数ですがサービスカウンターで両替をお願いいたします。</p>
+  <p>サービスカウンターの場所</p>
 
+  <script>
+    const button = document.getElementById('click');
+    
+    button.addEventListener('click', () => {
+      window.location.href = "select.html";
+    });
+  </script>
 </body>
 </html>

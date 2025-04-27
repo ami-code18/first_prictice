@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>コーヒー販売</title>
+  <style>
+  
+  
+/* 全体を縦横中央に配置 */
+/*中央に配置したときは、 display: grid;、 place-items: center（一度に縦横中央揃えに出来る）; */
+/*display:flex;と一緒に使用する。align-items(縦方向) , justify-content（横方向、 justify-content: space-between;など）も使用可能*/
+/*gridは複数行に対応、flexboxは１行のみに対応。*/
+/*  height: 100vh;  で画面いっぱいに高さを調節する*/
+
+
+    html {
+      height: 100%; /* html を画面全体に */
+      margin: 0;
+      display: flex;
+      justify-content: center; /* 水平方向の中央揃え */
+      align-items: center; /* 垂直方向の中央揃え */
+    }
+
+    body {
+      width: 80%; /* body の幅を 80% に設定 */
+      max-width: 600px; /* 最大幅を設定 */
+      text-align: center; /* テキストを中央に */
+      margin: 0; /* body のデフォルトの余白を消す */
+    }
+
+
+/* ボタンのスタイル */
+button {
+  padding: 10px 20px;
+  border: 2px solid #000;
+  border-radius: 8px;
+  transition:background-color 0.3s;
+}
+
+button:active {
+	background-color:#090909;
+	
+}
+   
+  </style>
+</head>
+<body>
+
+<h1>コーヒーを購入する</h1>
+
+<div class="button-container">
+<button id="yesButton" >説明あり</button>
+<button id="noButton">説明なし</button>
+</div>
+
+<script>
+
+	const button = document.getElementById('yesButton');
+	
+	button.addEventListener('click',()=>{
+		window.location.href = "nestPage.html";
+	});
+
+</script>
+
+</body>
+</html>

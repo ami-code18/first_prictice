@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>コーヒー販売</title>
+  <style>
+  
+  html{
+  	height:100%;
+  	margin:0;
+  	display:flex;
+  	justify-content:center;
+  	align-items:center;
+  }
+	  
+	ul {
+	  list-style-type: none;  /* 丸い点を消す */
+	  padding: 0;  /* リストの左側の余白を消す */
+	}
+	
+	h3{
+		 border-bottom: 2px solid #000;
+	}
+
+  .conteiner{
+  	text-align:center;
+  	margin:40px;
+  }
+  
+  .session{
+  	display:flex;
+  }
+  
+   .session > div {
+    display: flex; /* 子要素内でもflexを適用 */
+    flex-direction: column; /* 見出しとリストを縦並びに */
+    margin-right: 120px; 
+   }
+  
+  button{
+  	display:inline-block;
+  	border:2px solid #000;
+  	padding:20px;
+  }
+   
+  </style>
+</head>
+<body>
+	<h1>右の機械にコインを投入して下さい</h1>
+
+
+	<div class="session">
+	<div>
+	<h3>ご利用できる硬貨</h3>
+		<ul>
+			<li>500円、100円</li>
+			<li>50円、10円</li>
+		</ul>
+	</div>
+	
+	<div>
+	<h3>ご利用出来ないもの</h3>
+		<ul>
+			  <li>1円､５円</li>
+			  <li>紙幣（1000円、5000円、10000円）</li>
+			  <li>クレジット払い、バーコード決済</li>
+		</ul>
+	</div>	
+	</div>
+
+	<div class="conteiner" id="click">
+		<button>投入完了</button>
+	</div>
+	
+	<p>紙幣をご利用になる際は、お手数ですがサービスカウンターで両替をお願いいたします。</p>
+	<p>サービスカウンターの場所</p>
+
+<script>
+	const button = document.getElementById('click');
+	
+	button.addEventListener('click', ()=>{
+		window.location.href = "select.html";
+	});
+</script>
+
+</body>
+</html>

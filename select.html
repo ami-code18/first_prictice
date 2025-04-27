@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>コーヒーの選択</title>
+  <style>
+  
+	input{
+		display:none;
+	}
+   
+   .radio-label{
+   	display:inline-block;
+   	cursor:pointer;
+   	transition:	background-color 0.3s, color 0.3s, border-color 0.3s;
+   }
+   
+   <!-- :checkedでボタンをクリックしたときのレイアウトを行える -->
+   input:checked + label{
+   	background-color:red;
+   	color:white;
+   	border-color:red;
+   }
+   
+  </style>
+</head>
+<body>
+
+<h1>ホットかアイスの種類を選択して下さい</h1>
+
+  <!-- nameは排他的選択を可能にする。同じ文字を入力する-->
+  <!-- idとforを使用してinputタグとlabelタグを関連付ける。input labelの順番が大切 -->
+
+<input type="radio"id="hot" name=coffee"" value="hot"><label for="hot" class="radio-label">ホット</label>
+<input type="radio" id="ice" name="coffee" value="ice"><label for="ice">アイス</label>
+
+
+</body>
+</html>
